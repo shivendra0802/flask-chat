@@ -50,10 +50,6 @@ def add_room_member(room_id, room_name, username, added_by, is_room_admin=False)
          'added_at': datetime.now(), 'is_room_admin': is_room_admin})
 
 
-# def add_room_members(room_id, room_name, usernames, added_by):
-#     room_members_collection.insert_many(
-#         [{'_id': {'room_id': ObjectId(room_id), 'username': username}, 'room_name': room_name, 'added_by': added_by,
-#           'added_at': datetime.now(), 'is_room_admin': False} for username in usernames])
 
 def add_room_members(room_id, room_name, usernames, added_by):
     room_members_collection.insert_many(

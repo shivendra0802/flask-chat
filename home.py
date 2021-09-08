@@ -2,7 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect
 import os 
 import time 
 from datetime import datetime
-from bson.json_util import dumps
+# from bson.json_util import dumps
 import json 
 import pymongo 
 from flask_socketio import SocketIO, join_room, leave_room
@@ -90,25 +90,6 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('home'))
-
-
-# @app.route('/create-room/', methods=['GET', 'POST'])
-# @login_required
-# def create_room():
-#     message = ''
-#     if request.method == 'POST':
-#         room_name = request.form.get('room_name')
-#         usernames = [username.strip() for username in request.form.get('members').split(',')]
-
-#         if len(room_name) and len(usernames):
-#             room_id = save_room(room_name, current_user.username)
-#             if current_user.username in usernames:
-#                 usernames.remove(current_user.username)
-#             add_room_members(room_id, room_name, usernames, current_user.username)
-#             return redirect(url_for('view_room', room_id=room_id))
-#         else:
-#             message = "Failed to create room"
-#     return render_template('create_room.html', message=message)
 
 
 
